@@ -1,6 +1,5 @@
 ![Greenbone Logo](https://www.greenbone.net/wp-content/uploads/gb_new-logo_horizontal_rgb_small.png)
 
-
 # frontend-applicant-task-backend
 Backend project for frontend-applicant-task
 
@@ -15,7 +14,6 @@ Backend project for frontend-applicant-task
 - `docker build -t applicant-task-backend:latest .`
 - `docker run -p 8080:8080 --name applicant-task-backend-container applicant-task-backend:latest`
 
-
 # Environment variables
 
 | Key  | Required | Default | Description                      |
@@ -24,17 +22,10 @@ Backend project for frontend-applicant-task
 
 # API endpoints (GET)
 
-
-- /devices
-- /devices/:id
-- /vulnerabilities
-- /vulnerabilities/:cve
-
-- Applicant should create a public GIT repo and edit his task there and create commits (do not commit everything at once)
-- Applicant should containerize finished application
-
-
-
+- `/devices` - list devices
+- `/devices/:id` - list one device by id
+- `/devices/:id/vulnerabilities` - list all vulnerabilities of one device
+- `/vulnerabilities` - list all vulnerabilities
 
 # Technologies
 
@@ -45,10 +36,9 @@ The following technologies should be used, the rest is up to the applicant:
 - npm/yarn/pnpm
 - Mantine UI
 
-
-
-
 # Task
+
+Applicant should create a public GIT repo and edit his task there and create commits (do not commit everything at once).
 
 ## Mandatory
 
@@ -62,10 +52,7 @@ The following technologies should be used, the rest is up to the applicant:
 - Appealing UI
 - Documentation of the created components
 
-
-
 ## Optional
-
 
 - Both lists should be sortable
 - Both lists should be exportable as CSV
@@ -73,11 +60,7 @@ The following technologies should be used, the rest is up to the applicant:
 - Entries in lists can be selected, only the selected entries will be exported
 - Data can be mocked if needed
 
-
-
-
 ## Potential solution
-
 
 - React-SSR (NextJs, Remix, etc..) + fetch + React-Table.
 - React-SPA (Vite, CRA, etc..) + React-Router/Tabs + React-Table + Axios/React-Querry/RTK-Querry/Ky/Fetch-API
