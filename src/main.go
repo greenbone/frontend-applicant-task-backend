@@ -18,8 +18,7 @@ func main() {
 	vulnerabilityService := vulnerability_service.NewVulnerabilityService()
 	vulnerabilityController := vulnerabilities2.NewVulnerabilityController(vulnerabilityService)
 	deviceController := devices.NewDeviceController(devicesService)
-	deviceRouter := devices2.NewDeviceRouter(deviceController)
-	deviceRouter.RegisterRoutes()
+
 	r := gin.Default()
 	r.HandleMethodNotAllowed = true
 	r.NoMethod(func(c *gin.Context) {
