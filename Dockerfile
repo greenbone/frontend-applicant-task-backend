@@ -14,11 +14,8 @@ WORKDIR /app
 COPY --from=BUILDER /app/server ./server
 
 RUN addgroup -S appuser && adduser -S appuser -G appuser
-RUN ls -laR
-
 RUN chown appuser:appuser ./server
 USER appuser
 EXPOSE 8080
-RUN ls -laR
 
 CMD ["/app/server"]
