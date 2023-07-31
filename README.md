@@ -12,6 +12,13 @@ Backend project for frontend-applicant-task
 - `docker build -t applicant-task-backend:latest .`
 - `docker run -p 8080:8080 --name applicant-task-backend-container applicant-task-backend:latest`
 
+
+# Environment variables
+
+| Key  | Required | Default | Description                      |
+|------|----------|---------|----------------------------------|
+| PORT | no       | 8080    | Port on which the server listens |
+
 # API endpoints (GET)
 
 

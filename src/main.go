@@ -4,6 +4,7 @@ import (
 	"applicant-backend/src/controller/devices"
 	vulnerabilities2 "applicant-backend/src/controller/vulnerabilities"
 	"applicant-backend/src/entities"
+	"applicant-backend/src/helper"
 	devices2 "applicant-backend/src/routes/devices"
 	"applicant-backend/src/routes/vulnerabilities"
 	"applicant-backend/src/services/devices_service"
@@ -14,6 +15,10 @@ import (
 )
 
 func main() {
+	Config, err := helper.LoadConfig()
+	if err != nil {
+		log.Fatal("cannot load config:", err)
+	}
 	devicesService := devices_service.NewDeviceService()
 	vulnerabilityService := vulnerability_service.NewVulnerabilityService()
 	vulnerabilityController := vulnerabilities2.NewVulnerabilityController(vulnerabilityService)
@@ -41,7 +46,7 @@ func main() {
 	deviceRouterGin.RegisterRoutes()
 	vulnerabilityRouter.RegisterRoutes()
 
-	err := r.Run("0.0.0.0:8080")
+	err = r.Run("0.0.0.0:" + Config.Port)
 	if err != nil {
 		log.Fatalf("Encountered Gin error: %d", err)
 		return
