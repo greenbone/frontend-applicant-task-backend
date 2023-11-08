@@ -32,7 +32,7 @@ func (d *DeviceService) GetDeviceById(id string) (*entities.Device, error) {
 
 func (d *DeviceService) GetVulnerabilitiesForDevice(deviceId string) []entities.Vulnerability {
 	vulns := d.vulnService.GetVulnerabilities()
-	var vulnsForAsset []entities.Vulnerability = []entities.Vulnerability{}
+	var vulnsForAsset = []entities.Vulnerability{}
 	for _, vuln := range vulns {
 		if vuln.AssetId == deviceId {
 			vulnsForAsset = append(vulnsForAsset, vuln)
