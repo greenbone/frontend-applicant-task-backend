@@ -3,31 +3,34 @@
 # frontend-applicant-task-backend
 Backend project for frontend-applicant-task
 
-# Installation
+## Installation
 
-## Locally
+### Locally
 > You need to have go installed and set up
 - `go mod download` - Install necessary go modules
 - `go run ./src/main.go` - Start server on port 8080
 
-## Docker
+### Docker
 - `docker build -t applicant-task-backend:latest .`
 - `docker run -p 8080:8080 --name applicant-task-backend-container applicant-task-backend:latest`
 
-# Environment variables
+## Environment variables
 
 | Key  | Required | Default | Description                      |
 |------|----------|---------|----------------------------------|
 | PORT | no       | 8080    | Port on which the server listens |
 
-# API endpoints (GET)
+## API endpoints (GET)
 
 - `/devices` - list devices
 - `/devices/:id` - list one device by id
 - `/devices/:id/vulnerabilities` - list all vulnerabilities of one device
 - `/vulnerabilities` - list all vulnerabilities
 
-# Technologies
+
+# Applicant Task
+
+## Technologies
 
 The following technologies should be used, the rest is up to the applicant:
 - React
@@ -36,12 +39,13 @@ The following technologies should be used, the rest is up to the applicant:
 - npm/yarn/pnpm
 - Mantine UI
 
-# Task
+Others are optional.
+
+## Task
 
 Applicant should create a public GIT repo and edit his task there and create commits (do not commit everything at once).
 
-## Mandatory
-
+### Mandatory
 
 - Create frontend
 - Detailed README to start the project without problems
@@ -52,7 +56,7 @@ Applicant should create a public GIT repo and edit his task there and create com
 - Appealing UI
 - Documentation of the created components
 
-## Optional
+### Optional
 
 - Both lists should be sortable
 - Both lists should be exportable as CSV
@@ -60,7 +64,4 @@ Applicant should create a public GIT repo and edit his task there and create com
 - Entries in lists can be selected, only the selected entries will be exported
 - Data can be mocked if needed
 
-## Potential solution
-
-- React-SSR (NextJs, Remix, etc..) + fetch + React-Table.
-- React-SPA (Vite, CRA, etc..) + React-Router/Tabs + React-Table + Axios/React-Querry/RTK-Querry/Ky/Fetch-API
+Besides the stated technologies, the applicant can use whatever frameworks and libraries he wants to use.

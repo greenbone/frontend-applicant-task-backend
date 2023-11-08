@@ -39,7 +39,6 @@ func main() {
 		if error != "" {
 			context.AbortWithStatusJSON(http.StatusInternalServerError, entities.Error{Message: error})
 		}
-
 	})
 	vulnerabilityRouter := vulnerabilities.NewVulnerabilityRouter(r, vulnerabilityController)
 	deviceRouterGin := devices2.NewGinDeviceRouter(r, deviceController)
