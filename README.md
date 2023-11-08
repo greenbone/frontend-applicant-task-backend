@@ -27,41 +27,53 @@ Backend project for frontend-applicant-task
 - `/devices/:id/vulnerabilities` - list all vulnerabilities of one device
 - `/vulnerabilities` - list all vulnerabilities
 
-
-# Applicant Task
-
-## Technologies
-
-The following technologies should be used, the rest is up to the applicant:
-- React
-- TypeScript
-- NodeJS
-- npm/yarn/pnpm
-- Mantine UI
-
-Others are optional.
-
 ## Task
 
-Applicant should create a public GIT repo and edit his task there and create commits (do not commit everything at once).
 
-### Mandatory
+### Why?
 
-- Create frontend
-- Detailed README to start the project without problems
-- One list per entity
-- button or link to go to a detail view showing all data for the entity
-- list shows only relevant data
-- Create unit tests
-- Appealing UI
-- Documentation of the created components
+I want to check if my devices are are affected by a vulnerability.
 
-### Optional
+### Notes
 
-- Both lists should be sortable
-- Both lists should be exportable as CSV
-- Sorting of lists should be maintained after page reload
-- Entries in lists can be selected, only the selected entries will be exported
-- Data can be mocked if needed
+Install the API as described above (locally or docker)
 
-Besides the stated technologies, the applicant can use whatever frameworks and libraries he wants to use.
+Technologies to use:
+- NodeJS
+- TypeScript
+- npm/yarn/pnpm
+- React
+- Mantine UI
+
+Besides the stated technologies, the applicant can use any other frameworks and libraries.
+
+### Acceptance criteria (Junior)
+
+- A public git repo with the source code exists
+- A detailed README which explains how to start the project is provided
+- The different components are documented
+- Commits were made in a professional way (not everything at once)
+- The user can see a list of the devices with the relevant data
+- The user can see the details of a device on a single page
+- The user can see a list of the vulnerabilities with the relevant data
+- The user can see the details of a vulnerability on a single page
+- The UI of the application is appealing
+- Data can be mocked if required
+
+### Acceptance criteria (senior)
+
+- A public git repo with the source code exists
+- A detailed README which explains how to start the project is provided
+- The different components are documented
+- Commits were made in a professional way (not everything at once)
+- The user can see a list of the devices with the relevant data
+- The user can see the details of a device on a single page
+- The user can see a list of the vulnerabilities with the relevant data
+- The user can see the details of a vulnerability on a single page
+- The UI of the application is appealing
+- The lists of the devices and vulnerabilities are sortable
+- The lists of the devices and vulnerabilities can be exported as CSV
+- The Entries in a lists can be selected, so that only the selected entries are exported
+- The sorting of the lists is maintained after a page reload
+
+
