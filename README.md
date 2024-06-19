@@ -22,7 +22,7 @@ Backend project for frontend-applicant-task
 
 ## API endpoints (GET)
 
-- `/devices` - list devices
+- `/devices/` - list devices
 - `/devices/:id` - list one device by id
 - `/devices/:id/vulnerabilities` - list all vulnerabilities of one device
-- `/vulnerabilities` - list all vulnerabilities
+- `/vulnerabilities/` - list all vulnerabilities
