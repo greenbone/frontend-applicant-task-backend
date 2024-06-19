@@ -1,4 +1,4 @@
-FROM golang:1.20 AS BUILDER
+FROM golang:1.22.4-alpine3.20 AS BUILDER
 MAINTAINER Mika Greif <mika.greif@greenbone.net>
 WORKDIR /app
 COPY ./go.mod ./go.sum ./
