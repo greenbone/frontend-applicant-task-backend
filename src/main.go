@@ -3,13 +3,11 @@ package main
 import (
 	"applicant-backend/src/controller/devicesController"
 	"applicant-backend/src/controller/vulnerabilitiesController"
-	"applicant-backend/src/entities"
 	"applicant-backend/src/helper"
+	"applicant-backend/src/internal"
 	"applicant-backend/src/services/devices_service"
 	"applicant-backend/src/services/vulnerability_service"
-	"github.com/gin-gonic/gin"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -18,23 +16,7 @@ func main() {
 		log.Fatal("cannot load config:", err)
 	}
 
-	r := gin.Default()
-	r.HandleMethodNotAllowed = true
-	r.NoMethod(func(c *gin.Context) {
-		c.JSON(http.StatusMethodNotAllowed, entities.Error{Message: "method not allowed"})
-	})
-	r.Use(func(context *gin.Context) {
-		context.Next()
-		var error string
-		for _, err := range context.Errors {
-			// log, handle, etc.
-			error = err.Error()
-		}
-		if error != "" {
-			context.AbortWithStatusJSON(http.StatusInternalServerError, entities.Error{Message: error})
-		}
-	})
-
+	r := internal.InitializeRouter()
 	vulnerabilityService := vulnerability_service.NewVulnerabilityService()
 	devicesService := devices_service.NewDeviceService(vulnerabilityService)
 
