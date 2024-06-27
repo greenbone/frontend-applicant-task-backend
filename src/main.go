@@ -1,12 +1,10 @@
 package main
 
 import (
-	"applicant-backend/src/controller/devices"
-	vulnerabilities2 "applicant-backend/src/controller/vulnerabilities"
+	"applicant-backend/src/controller/devicesController"
+	"applicant-backend/src/controller/vulnerabilitiesController"
 	"applicant-backend/src/entities"
 	"applicant-backend/src/helper"
-	devices2 "applicant-backend/src/routes/devices"
-	"applicant-backend/src/routes/vulnerabilities"
 	"applicant-backend/src/services/devices_service"
 	"applicant-backend/src/services/vulnerability_service"
 	"github.com/gin-gonic/gin"
@@ -19,10 +17,6 @@ func main() {
 	if err != nil {
 		log.Fatal("cannot load config:", err)
 	}
-	devicesService := devices_service.NewDeviceService()
-	vulnerabilityService := vulnerability_service.NewVulnerabilityService()
-	vulnerabilityController := vulnerabilities2.NewVulnerabilityController(vulnerabilityService)
-	deviceController := devices.NewDeviceController(devicesService)
 
 	r := gin.Default()
 	r.HandleMethodNotAllowed = true
@@ -41,10 +35,11 @@ func main() {
 		}
 	})
 
-	vulnerabilityRouter := vulnerabilities.NewVulnerabilityRouter(r, vulnerabilityController)
-	deviceRouterGin := devices2.NewGinDeviceRouter(r, deviceController)
-	deviceRouterGin.RegisterRoutes()
-	vulnerabilityRouter.RegisterRoutes()
+	vulnerabilityService := vulnerability_service.NewVulnerabilityService()
+	devicesService := devices_service.NewDeviceService(vulnerabilityService)
+
+	_ = vulnerabilitiesController.NewVulnerabilityController(vulnerabilityService, r)
+	_ = devicesController.NewDeviceController(devicesService, r)
 
 	err = r.Run("0.0.0.0:" + Config.Port)
 	if err != nil {

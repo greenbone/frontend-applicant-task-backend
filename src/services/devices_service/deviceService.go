@@ -7,11 +7,13 @@ import (
 )
 
 type DeviceService struct {
-	vulnService vulnerability_service.VulnerabilityService
+	vulnService *vulnerability_service.VulnerabilityService
 }
 
-func NewDeviceService() *DeviceService {
-	return &DeviceService{}
+func NewDeviceService(vulnService *vulnerability_service.VulnerabilityService) *DeviceService {
+	return &DeviceService{
+		vulnService: vulnService,
+	}
 }
 
 func (d *DeviceService) GetDevices() []entities.Device {
@@ -20,8 +22,7 @@ func (d *DeviceService) GetDevices() []entities.Device {
 
 func (d *DeviceService) GetDeviceById(id string) (*entities.Device, error) {
 	devices := d.GetDevices()
-	for _, d := range devices {
-		device := d
+	for _, device := range devices {
 		if device.Oid == id {
 			return &device, nil
 		}
@@ -32,7 +33,7 @@ func (d *DeviceService) GetDeviceById(id string) (*entities.Device, error) {
 
 func (d *DeviceService) GetVulnerabilitiesForDevice(deviceId string) []entities.Vulnerability {
 	vulns := d.vulnService.GetVulnerabilities()
-	var vulnsForAsset = []entities.Vulnerability{}
+	var vulnsForAsset []entities.Vulnerability
 	for _, vuln := range vulns {
 		if vuln.AssetId == deviceId {
 			vulnsForAsset = append(vulnsForAsset, vuln)

@@ -1,4 +1,4 @@
-package devices
+package devicesController
 
 import (
 	"applicant-backend/src/services/devices_service"
@@ -9,8 +9,20 @@ type DeviceController struct {
 	service *devices_service.DeviceService
 }
 
-func NewDeviceController(service *devices_service.DeviceService) *DeviceController {
-	return &DeviceController{service: service}
+func NewDeviceController(service *devices_service.DeviceService, router gin.IRouter) *DeviceController {
+	controller := &DeviceController{
+		service: service,
+	}
+	controller.registerRoutes(router)
+	return controller
+}
+
+func (d *DeviceController) registerRoutes(router gin.IRouter) {
+	group := router.Group("/devices")
+
+	group.GET("/", d.GetDevices)
+	group.GET("/:oid", d.GetDeviceById)
+	group.GET("/:oid/vulnerabilities", d.GetVulnerabilitiesForDevice)
 }
 
 func (d *DeviceController) GetDevices(context *gin.Context) {
@@ -19,9 +31,10 @@ func (d *DeviceController) GetDevices(context *gin.Context) {
 }
 
 func (d *DeviceController) GetDeviceById(context *gin.Context) {
-	device, err := d.service.GetDeviceById(context.Param("oid"))
+	oid := context.Param("oid")
+	device, err := d.service.GetDeviceById(oid)
 	if err != nil {
-		context.Error(err)
+		_ = context.Error(err)
 		return
 	}
 	context.JSON(200, device)
