@@ -1,7 +1,7 @@
 package devicesController
 
 import (
-	"applicant-backend/src/services/devices_service"
+	"applicant-backend/internal/services/devices_service"
 	"github.com/gin-gonic/gin"
 )
 

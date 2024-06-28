@@ -1,12 +1,12 @@
 package main
 
 import (
-	"applicant-backend/src/controller/devicesController"
-	"applicant-backend/src/controller/vulnerabilitiesController"
-	"applicant-backend/src/helper"
-	"applicant-backend/src/internal"
-	"applicant-backend/src/services/devices_service"
-	"applicant-backend/src/services/vulnerability_service"
+	"applicant-backend/internal/controller/devicesController"
+	"applicant-backend/internal/controller/vulnerabilitiesController"
+	"applicant-backend/internal/helper"
+	"applicant-backend/internal/internal"
+	"applicant-backend/internal/services/devices_service"
+	"applicant-backend/internal/services/vulnerability_service"
 	"log"
 )
 

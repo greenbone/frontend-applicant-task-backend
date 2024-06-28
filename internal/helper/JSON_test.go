@@ -1,7 +1,7 @@
 package helper_test
 
 import (
-	"applicant-backend/src/helper"
+	"applicant-backend/internal/helper"
 	"testing"
 )
 

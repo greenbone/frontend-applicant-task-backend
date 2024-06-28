@@ -1,7 +1,7 @@
 package vulnerabilitiesController
 
 import (
-	"applicant-backend/src/services/vulnerability_service"
+	"applicant-backend/internal/services/vulnerability_service"
 	"github.com/gin-gonic/gin"
 )
 

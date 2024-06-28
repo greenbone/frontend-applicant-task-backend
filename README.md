@@ -8,7 +8,7 @@ Backend project for frontend-applicant-task
 ### Locally
 > You need to have go installed and set up
 - `go mod download` - Install necessary go modules
-- `go run ./src/main.go` - Start server on port 8080
+- `go run ./internal/main.go` - Start server on port 8080
 
 ### Docker
 - `docker build -t applicant-task-backend:latest .`

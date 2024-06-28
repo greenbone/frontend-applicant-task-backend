@@ -1,6 +1,6 @@
 package devices_service
 
-import "applicant-backend/src/entities"
+import "applicant-backend/internal/entities"
 
 var DUMMY_DEVICES = []entities.Device{
 	{Oid: "1", Hostname: "Laboratory1", Ipv4: "192.168.178.13", MacAddress: "F7-82-9F-FE-95-17", Ipv6: "7c14:03d8:9539:aa61:fbbc:b55d:1fe0:942e", OperatingSystem: "Windows", Ports: []entities.Port{{Number: 3306, Protocol: "TCP"}, {Number: 22, Protocol: "TCP"}}},

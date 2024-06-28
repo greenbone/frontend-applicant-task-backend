@@ -1,8 +1,8 @@
 package devices_service
 
 import (
-	"applicant-backend/src/entities"
-	"applicant-backend/src/services/vulnerability_service"
+	"applicant-backend/internal/entities"
+	"applicant-backend/internal/services/vulnerability_service"
 	"errors"
 )
 

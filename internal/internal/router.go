@@ -1,7 +1,7 @@
 package internal
 
 import (
-	"applicant-backend/src/entities"
+	"applicant-backend/internal/entities"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
