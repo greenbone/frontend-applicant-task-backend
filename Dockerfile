@@ -2,11 +2,11 @@ FROM golang:1.22.4-alpine3.20 AS BUILDER
 MAINTAINER Mika Greif <mika.greif@greenbone.net>
 WORKDIR /app
 COPY ./go.mod ./go.sum ./
-COPY ./src ./src
+COPY ./internal ./internal
 
 RUN go version
 RUN go mod download
-RUN CGO_ENABLED=0 go build -a -o ./server ./src/main.go
+RUN CGO_ENABLED=0 go build -a -o ./server ./internal/main.go
 
 FROM alpine:3.18
 
