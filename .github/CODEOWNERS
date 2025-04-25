@@ -1,0 +1,6 @@
+# default reviewers
+*                 @greenbone/ui-developers
+
+# .github workflows and config
+.github/          @greenbone/ui-developers @greenbone/devops
+docker/           @greenbone/ui-developers @greenbone/devops
