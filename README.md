@@ -1,7 +1,7 @@
 ![Greenbone Logo](https://www.greenbone.net/wp-content/uploads/gb_new-logo_horizontal_rgb_small.png)
 
 # frontend-applicant-task-backend
-Backend project for frontend-applicant-task
+This is the backend project for the frontend applicant task (frontend-applicant-task) performed at Greenbone AG.
 
 ## Installation
 
@@ -26,3 +26,13 @@ Backend project for frontend-applicant-task
 - `/devices/:id` - list one device by id
 - `/devices/:id/vulnerabilities` - list all vulnerabilities of one device
 - `/vulnerabilities/` - list all vulnerabilities
+
+## Support
+
+If you need support with your applicant task, please reach out to your contact person at Greenbone.
+
+## License
+
+Copyright (C) 2023 [Greenbone AG](https://www.greenbone.net/)
+
+Licensed under the [MIT](LICENSE).
