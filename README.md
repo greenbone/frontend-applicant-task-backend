@@ -1,6 +1,6 @@
 ![Greenbone Logo](https://www.greenbone.net/wp-content/uploads/gb_new-logo_horizontal_rgb_small.png)
 
-# frontend-applicant-task-backend
+# Backend for the frontend-applicant-task
 This is the backend project for the frontend applicant task (frontend-applicant-task) performed at Greenbone AG.
 
 ## Installation
